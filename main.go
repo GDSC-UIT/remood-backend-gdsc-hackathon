@@ -43,6 +43,6 @@ func main() {
 	routes.DayReviewRouter(api)
 	routes.ArticleRouter(api)
 
-	port := fmt.Sprintf(":%s", os.Getenv("APP_PORT"))
+	port := fmt.Sprintf(":%s", os.Getenv("PORT"))
 	router.Run("localhost" + port)
 }

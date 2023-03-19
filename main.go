@@ -44,9 +44,5 @@ func main() {
 	routes.ArticleRouter(api)
 
 	port := fmt.Sprintf(":%s", os.Getenv("PORT"))
-	if port == "" {
-        	port = "8080"
-   	}
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))	
 	router.Run("localhost" + port)
 }

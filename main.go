@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 
-	"remood/pkg/auth"	
 	"remood/routes"
 
 	"github.com/gin-gonic/gin"
@@ -20,9 +19,6 @@ func main() {
 	db := database.GetMongoInstance()
 	defer db.Client.Connect(context.Background())
 	fmt.Println("MONGODB CONNECTED")
-
-	// GENERATE JWT SECRET KEY
-	auth.GenerateJWTKey()
 
 	//GIN DEFINE
 	router := gin.Default()

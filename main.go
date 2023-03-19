@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	// "remood/pkg/auth"	
+	"remood/pkg/auth"	
 	"remood/routes"
 
 	"github.com/gin-gonic/gin"
@@ -20,7 +20,7 @@ func main() {
 	db := database.GetMongoInstance()
 	defer db.Client.Connect(context.Background())
 	fmt.Println("MONGODB CONNECTED")
- 
+
 	// GENERATE JWT SECRET KEY
 	// auth.GenerateJWTKey()
 
@@ -44,6 +44,6 @@ func main() {
 	routes.ArticleRouter(api)
 	routes.QuoteRouter(api)
 
-	port := fmt.Sprintf(":%s", os.Getenv("APP_PORT"))
-	router.Run("localhost" + port)
+	port := fmt.Sprintf(":%s", os.Getenv("PORT"))
+	router.Run("0.0.0.0" + port)
 }

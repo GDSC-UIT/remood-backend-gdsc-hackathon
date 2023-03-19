@@ -7,4 +7,5 @@ const (
 	DiaryNote CollectionsEnum = "diary_notes"
 	ReviewNote CollectionsEnum = "review_notes"
 	Article CollectionsEnum = "articles"
+	Quote CollectionsEnum = "quotes"
 )

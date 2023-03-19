@@ -22,7 +22,7 @@ func main() {
 	fmt.Println("MONGODB CONNECTED")
 
 	// GENERATE JWT SECRET KEY
-	// auth.GenerateJWTKey()
+	auth.GenerateJWTKey()
 
 	//GIN DEFINE
 	router := gin.Default()
@@ -37,10 +37,6 @@ func main() {
 	}
 
 	//ROUTER DEFINE
-	routes.UserRouter(api)
-	routes.DiaryNoteRouter(api)
-	routes.ReviewNoteRouter(api)
-	routes.DayReviewRouter(api)
 	routes.ArticleRouter(api)
 	routes.QuoteRouter(api)
 

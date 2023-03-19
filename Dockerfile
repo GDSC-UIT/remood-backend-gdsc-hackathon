@@ -8,10 +8,9 @@ RUN go mod download
 
 COPY *.go ./
 
-#RUN go build -o /remood-backend-exec
+RUN go build -o ./remood-backend-exec
+
 
 EXPOSE 8080
-#CMD [ "/remood-backend-exec" ]
-
-RUN go run .
+ENTRYPOINT ["./remood-backend-exec"]
 
